@@ -25,13 +25,22 @@ function App() {
     return;
   };
 
+  // Delete Job
+  const deleteJob = async (id) => {
+    await fetch(`/api/jobs/${id}`, {
+      method: "DELETE",
+    });
+
+    return;
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/add-job" element={<AddJob addJobSubmit={addJob} />} />
-        <Route path="/jobs/:id" element={<Job />} />
+        <Route path="/jobs/:id" element={<Job deleteJob={deleteJob} />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )

@@ -83,20 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "b187",
-      "title": "Frontend Developer",
-      "type": "Full-Time",
-      "location": " San Francisco, CA (Hybrid)",
-      "description": "We’re looking for a passionate and skilled Frontend Developer to join our product team. You’ll work closely with designers and backend engineers to craft beautiful, user-friendly interfaces using React, TypeScript, and modern CSS frameworks. The ideal candidate has a strong eye for design, a deep understanding of front-end best practices, and enjoys working in a collaborative environment.",
-      "salary": "Under $50K",
-      "company": {
-        "name": "BrightTech Solutions",
-        "description": "BrightTech Solutions is a leading software company specializing in productivity tools for remote and hybrid teams. Our flagship platform helps thousands of companies streamline their workflows and improve team communication. We believe in innovation, user-centered design, and building tech that makes work easier.",
-        "contactEmail": "careers@brighttech.com",
-        "contactPhone": "(415) 555-1234"
-      }
     }
   ]
 }
