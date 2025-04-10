@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import Spinner from "../components/Spinner";
 
-function EditJob() {
+function EditJob({ updateJobSubmit }) {
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -24,7 +26,6 @@ function EditJob() {
       try {
         const res = await fetch(`/api/jobs/${id}`);
         const data = await res.json();
-
         setJob(data);
 
         // Prefill form with job data
@@ -47,9 +48,30 @@ function EditJob() {
     fetchJob();
   }, [id]);
 
-  console.log(job);
+  const submitForm = (e) => {
+    e.preventDefault();
 
-  const submitForm = () => {};
+    const updatedJob = {
+      id,
+      title,
+      type,
+      location,
+      description,
+      salary,
+      company: {
+        name: companyName,
+        description: companyDescription,
+        contactEmail,
+        contactPhone,
+      },
+    };
+
+    updateJobSubmit(updatedJob);
+
+    toast.success("Job updated successfully!");
+
+    return navigate(`/jobs/${id}`);
+  };
 
   return loading ? (
     <Spinner />
