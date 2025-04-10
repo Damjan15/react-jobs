@@ -9,10 +9,11 @@ import Home from "./pages/Home";
 import Jobs from "./pages/Jobs";
 import Job from "./pages/Job";
 import AddJob from "./pages/AddJob";
+import EditJob from "./pages/EditJob";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  // Add Job Function
+  // Add Job
   const addJob = async (newJob) => {
     await fetch("/api/jobs", {
       method: "POST",
@@ -41,6 +42,7 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/add-job" element={<AddJob addJobSubmit={addJob} />} />
         <Route path="/jobs/:id" element={<Job deleteJob={deleteJob} />} />
+        <Route path="/edit-job/:id" element={<EditJob />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     )
